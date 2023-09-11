@@ -1,0 +1,14 @@
+#search-bar {
+  padding: 40px 0;
+}
+.info-container .info-title {
+  color: #000087;
+  font-size: 14px;
+  margin: 0;
+}
+.info-container .info-description {
+  color: #000087;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+}
