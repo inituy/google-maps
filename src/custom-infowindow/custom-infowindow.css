@@ -1,0 +1,62 @@
+/* InfoWindows */
+/* Google maps inherited styling */
+.gm-style .gm-style-iw-c { /* top and left side*/
+  padding-top: 21px;
+  padding-left: 25px;
+  width: 277px;
+}
+.gm-style .gm-style-iw-d { /* right and button side */
+  padding-bottom: 5px;
+  padding-right: 7px;
+}
+/*********************************/
+.info-container h4, .info-container p {
+  margin: 0;
+}
+.info-container .title {
+  font-size: 18px;
+}
+.info-container .category {
+  font-size: 13px;
+  color: #999999;
+  margin: 0 0 15px;
+}
+.info-container .address {
+  font-size: 14px;
+  margin: 0 0 15px
+}
+.info-container .buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 14px;
+}
+
+/* Removes the "X" button */
+button[title="Close"] {
+  display: none !important;
+}
+
+/* These styles probably exist already in CW */
+button {
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+  flex-basis: 50%;
+  font-weight: 700;
+  border-radius: 6px;
+  height: 30px;
+}
+
+.pay-btn {
+  font-size: 12px;
+  color: #fff;
+  background-color: #06f
+}
+
+.details-btn {
+  border: 2px solid #06f;
+  background-color: #fff;
+  color: #06f;
+}

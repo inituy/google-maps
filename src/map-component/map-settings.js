@@ -4,30 +4,36 @@ const mockedMarkers = [
     address: {
       streetName: "General Artigas 1233",
       zipCode: 11200,
-      city: "Montevideo"
+      city: "Montevideo",
+      state: 'New York'
     },
-    title: "Pepe",
-    description: "Good, description"
+    title: "New Cool Stuff",
+    description: "Good, description",
+    category: 'Schools'
   },
   {
     position: { lat: -34.901, lng: -56.159 },
     address: {
       streetName: "Doctor Enrique Pouey 2588",
       zipCode: 11600,
-      city: "Montevideo"
+      city: "Montevideo",
+      state: 'Texas'
     },
-    title: "Chao",
-    description: "Not weird description"
+    title: "History Unboxed",
+    description: "Not weird description",
+    category: 'Paraprofessionals'
   },
   {
     position: { lat: -34.910, lng: -56.159 },
     address: {
       streetName: "El Viejo Pancho 2511",
       zipCode: 11300,
-      city: "Montevideo"
+      city: "Montevideo",
+      state: 'Florida'
     },
-    title: "Chi",
-    description: "Weird description"
+    title: "Advance Game Controlers",
+    description: "Weird description",
+    category: 'Therapists'
   }
 ];
 
@@ -42,11 +48,6 @@ const mapStyles = [
     elementType: "labels",
     stylers: [{ visibility: "off" }],
   },
-  //{
-  //  featureType: "road",
-  //  elementType: "labels",
-  //  stylers: [{ visibility: "off" }],
-  //},
   {
     featureType: "landscape",
     elementType: "labels",

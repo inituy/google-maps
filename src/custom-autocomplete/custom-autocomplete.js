@@ -31,6 +31,8 @@ const CustomAutocomplete = ({
     return (
       <ul className="autocomplete-list">
         {filteredMarkers.map((marker) => { 
+          const address = marker.address;
+          const fullAddress = `${address.streetName}, ${address.city}, ${address.state}`;
           const handleShowSelectedSuggestion = () => {
             showSelectedSuggestion(marker);
             setQuery('');
@@ -40,7 +42,7 @@ const CustomAutocomplete = ({
               className="autocomplete-item"
               onClick={handleShowSelectedSuggestion}
               key={Math.random().toString()}>
-              {marker.address.streetName}, {marker.address.city}
+                {fullAddress}
             </li>
           )})
         }

@@ -1,14 +1,17 @@
+/* Map */
+.map-parent {
+  display: flex;
+}
+.map-container {
+  flex: 1
+}
+#map {
+  height: 100vh;
+  max-width: 526px;
+  margin: 0 0 0 auto;
+}
+/* Search bar */
 #search-bar {
   padding: 40px 0;
 }
-.info-container .info-title {
-  color: #000087;
-  font-size: 14px;
-  margin: 0;
-}
-.info-container .info-description {
-  color: #000087;
-  font-size: 12px;
-  font-weight: 500;
-  margin: 0;
-}
+
