@@ -25,6 +25,9 @@ const createCustomMap = (ref, center, zoom) => {
       currentInfoWindow.close();
   });
 
+  map.addListener('bounds_changed', () => {
+  });
+
   map.setCenter(center);
   return map;
 };
@@ -85,9 +88,52 @@ const createCustomInfoWindowForMarker = (map, markers) => {
   });
 };
 
+const injectCustomElement = (map, elementId, position) => {
+  const ControlPosition = {
+    // indicates that the control should be placed along the top center of the map.
+    'TOP_CENTER': window.google.maps.ControlPosition.TOP_CENTER,
+    // indicates that the control should be placed along the top left of the map, with any sub-elements of the control "flowing" towards the top center.
+    'TOP_LEFT': window.google.maps.ControlPosition.TOP_LEFT,
+    // indicates that the control should be placed along the top right of the map, with any sub-elements of the control "flowing" towards the top center.
+    'TOP_RIGHT': window.google.maps.ControlPosition.TOP_RIGHT,
+    // indicates that the control should be placed along the top left of the map, but below any TOP_LEFT elements.
+    'LEFT_TOP': window.google.maps.ControlPosition.LEFT_TOP,
+    // indicates that the control should be placed along the top right of the map, but below any TOP_RIGHT elements.
+    'RIGHT_TOP': window.google.maps.ControlPosition.RIGHT_TOP,
+    // indicates that the control should be placed along the left side of the map, centered between the TOP_LEFT and BOTTOM_LEFT positions.
+    'LEFT_CENTER': window.google.maps.ControlPosition.LEFT_CENTER,
+    // indicates that the control should be placed along the right side of the map, centered between the TOP_RIGHT and BOTTOM_RIGHT positions.
+    'RIGHT_CENTER': window.google.maps.ControlPosition.RIGHT_CENTER,
+    // indicates that the control should be placed along the bottom left of the map, but above any BOTTOM_LEFT elements.
+    'LEFT_BOTTOM': window.google.maps.ControlPosition.LEFT_BOTTOM,
+    // indicates that the control should be placed along the bottom right of the map, but above any BOTTOM_RIGHT elements.
+    'RIGHT_BOTTOM': window.google.maps.ControlPosition.RIGHT_BOTTOM,
+    // indicates that the control should be placed along the bottom center of the map.
+    'BOTTOM_CENTER': window.google.maps.ControlPosition.BOTTOM_CENTER,
+    // indicates that the control should be placed along the bottom left of the map, with any sub-elements of the control "flowing" towards the bottom center.
+    'BOTTOM_LEFT': window.google.maps.ControlPosition.BOTTOM_LEFT,
+    // indicates that the control should be placed along the bottom right of the map, with any sub-elements of the control "flowing" towards the bottom center.
+    'BOTTOM_RIGHT': window.google.maps.ControlPosition.BOTTOM_RIGHT,
+  };
+
+  const domElement = document.getElementById(elementId);
+  map.controls[ControlPosition[position]].push(domElement);
+};
+
+const isInFullScreenMode = () => {
+  return (
+    !!document.fullscreenElement ||
+    !!document.mozFullScreenElement ||
+    !!document.webkitFullscreenElement ||
+    !!document.msFullscreenElement
+  )
+};
+
 export {
   createCustomMap,
   createCurrentPositionMarker,
   createCustomMarkers,
-  createCustomInfoWindowForMarker
+  createCustomInfoWindowForMarker,
+  injectCustomElement,
+  isInFullScreenMode
 };

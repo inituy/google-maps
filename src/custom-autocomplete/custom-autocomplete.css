@@ -1,3 +1,9 @@
+#search-bar-and-filter-btn-container {
+  display: flex;;
+  gap: 20px;
+  align-items: center;
+}
+
 .custom-autocomplete {
   position: relative;
 }
